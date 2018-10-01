@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="../../opt/lib/libmseed" name="0">
+      <df name="doc">
+      </df>
+      <df name="example">
+        <in>msrepack.c</in>
+        <in>msview.c</in>
+      </df>
+      <df name="matlab">
+        <in>mexMsReadTraces.c</in>
+        <in>mexMsReadTracesNative.c</in>
+      </df>
+      <in>fileutils.c</in>
+      <in>genutils.c</in>
+      <in>gswap.c</in>
+      <in>libmseed.h</in>
+      <in>lmplatform.c</in>
+      <in>lmplatform.h</in>
+      <in>logging.c</in>
+      <in>lookup.c</in>
+      <in>msrutils.c</in>
+      <in>pack.c</in>
+      <in>packdata.c</in>
+      <in>packdata.h</in>
+      <in>parseutils.c</in>
+      <in>selection.c</in>
+      <in>steimdata.h</in>
+      <in>tracelist.c</in>
+      <in>traceutils.c</in>
+      <in>unpack.c</in>
+      <in>unpackdata.c</in>
+      <in>unpackdata.h</in>
+    </df>
+    <df root="." name="1">
+      <df name="settings">
+        <in>settings.c</in>
+        <in>settings.h</in>
+        <in>strmap.c</in>
+        <in>strmap.h</in>
+      </df>
+      <in>init_usb_FRAG.c</in>
+      <in>libmseed.h</in>
+      <in>lmplatform.h</in>
+      <in>mini_logger_writer.c</in>
+      <in>mini_logger_writer.h</in>
+      <in>minisepdevice.c</in>
+      <in>minisepdevice.h</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>4</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,8 @@
+	# property defaults file for SeisGram2K
+	seisgram2k.display.maxvisible = 6
+	seisgram2k.display.sort=NO
+	seisgram2k.channel.format = MINI_SEED
+	seisgram2k.display.lockalignment = YES
+	seisgram2k.pick.file = sg2k.phs
+	seisgram2k.commands.onread = filp_5
+	

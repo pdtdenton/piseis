@@ -1,0 +1,133 @@
+mini_logger_writer - Connect to and collect real-time data from a USB Seismometer
+	Interface device and write 512-byte Mini-SEED data records in mseed
+	files.
+
+ringserver - Generic packet ring buffer and SeedLink server (from
+	https://seiscode.iris.washington.edu/projects/ringserver)
+
+Anthony Lomax - ALomax Scientific (www.alomax.net)
+
+Paul Denton - School Seismology Project (www.bgs.ac.uk/ssp)
+
+Supported by NERA: Network of European Research Infrastructures for
+	Earthquake Risk Assessment and Mitigation, under the European Community's
+	Seventh Framework Programme (FP7), grant agreement n° 262330.
+
+
+mini_logger_writer	v0.11   2014.02.27
+
+
+-- Building/Installing --
+
+In most environments a simple 'make clean' followed by 'make' in the
+	mini_logger_writer directory will build the mini_logger_writer and
+	ringserver programs.  Building on theRaspberry Pi takes several minutes.
+
+The CC and CFLAGS environment variables can be used to configure the build
+	parameters.
+
+
+-- Licensing --
+
+This program is free software; you can redistribute it and/or modify it under
+	the terms of the GNU General Public License as published by the Free
+	Software Foundation; either version 2 of the License, or (at your option)
+	any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+	ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+	FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+	(GNU-GPL) for more details. The GNU-GPL and further information can be
+	found here: http://www.gnu.org/
+
+
+-- Usage --
+
+After installation, all programs should be run from the mini_logger_writer
+	directory.  With the default configuration, all output is written in
+	sub-directories of the mini_logger_writer directory; program status log
+	files are log/mini_logger_writer.log and log/ringserver.log.
+
+1) Edit mini_logger_writer.prop and ring.conf for your configuration.  For
+	detailed information see the comments in these files and the information
+	files in sub-directory program/ringserver.
+
+2) Reconnect (unplug and plug in) the USB Seismometer Interface device.
+
+To check for and kill any running ringserver or mini_logger_writer processes:
+
+ps axu | grep mini_logger_writer
+
+ps axu | grep ringserver
+
+
+3) Start mini_logger_writer and ringserver:
+
+start_all.sh
+
+Check log/mini_logger_writer.log for status and error messages.
+
+4) Start SeisGram2K SeedLink monitor to view real-time data (requires Java
+	1.6 or higher and SeisGram2K60.jar in the current dir):
+
+./run_sg2k_seedlink.sh <station_network>_<station_name>:<channel_prefix><component>
+where values in brackets <...> correspond to those in mini_logger_writer.prop 
+
+5) Re-start mini_logger_writer after port reconnect:
+
+./start_logger_writer.sh
+
+6) Stop mini_logger_writer and ringserver:
+
+./stop_all.sh
+
+
+-- Notes --
+
+1) Program usage is available with:
+
+./mini_logger_writer -h, ./ringserver -h and ./run_sg2k_seedlink.sh -h
+
+2) A port reconnect may be needed after booting or logging in, or after
+	re-starting mini_logger_writer.
+
+3) If the programs are restarted after a long pause or the device nominal
+	sample rate is changed, it may be necessary to clear the data stores:
+
+rm data_current/* ; rm ringserver_store/*/* ; rm scan.state
+
+4) The program mini_logger_writer will attempt to re-connect to the USB
+	Seismometer Interface device if the connection is lost.
+
+5) To debug mini_logger_writer, kill any running mini_logger_writer process
+	and restart from the command line:
+
+./mini_logger_writer -v, or ./mini_logger_writer -vv
+
+6) SeisGram2K SeedLink monitor can be run remotely to view real-time data,
+	e.g., for 1hr (3600s) view window for net UK, station TEST, channes BHZ
+	from a computer hosting the USB Seismometer Interface device with
+	hostname IP 192.168.0.9:
+
+./run_sg2k_seedlink.sh UK_TEST:BHZ 3600 192.168.0.9
+
+SeisGram2K SeedLink monitor can also be run in an ssh window on the computer
+	hosting the USB Seismometer Interface device, e.g.:
+
+ssh -X pi@192.168.0.9, cd ~/mini_logger_writer ; ./run_sg2k_seedlink.sh UK_TEST:BHZ
+
+Warning: On a Raspberry Pi, the sshd and java processes use most of the CPU
+	time!
+
+7) SeisGram2K can be used to view the current data buffer on disk, e.g.:
+
+java -Xmx768m -jar SeisGram2K60.jar -channel.concatenate=YES
+	-channel.format=MINI_SEED data_current/2013/11/04/13/*/*.mseed
+
+
+8) The program mini_logger_writer uses a complicated averaging algorithm to
+	estimate the true sampling rate and start times for each miniseed data
+	record.  Please contact Anthony Lomax if you have problems or notice
+	anomalies with these values.
+
+

@@ -1,0 +1,82 @@
+mini_logger_writer version: 0.1 (2013.10.29)
+mini_logger_writer version: 0.1 (2013.10.29)
+mini_logger_writer version: 0.1 (2013.10.29)
+Info: property set: [Logging] port_path_hint = /dev/cu.usbmodem411
+Info: property set: [Logging] log_dir = ./logs_current
+Info: property set: [Logging] logging_enabled = 1
+Info: property set: [Logging] log_buffer_size = 72.000000
+Info: property set: [Station] station_network = UK
+Info: property set: [Station] station_name = TEST
+Info: property set: [Station] channel_prefix = BH
+Info: property set: [Station] component = Z
+Info: property set: [Station] nominal_sample_rate = 80
+Info: property set: [Station] nominal_gain = 4
+Fri Nov 01 11:38:27 2013 - record_index_modulo=162000
+Fri Nov 01 11:38:27 2013 - start record_index=24004
+Fri Nov 01 11:38:27 2013 - Searching for device...
+Fri Nov 01 11:38:28 2013 - ringserver version: 2013.284
+Fri Nov 01 11:38:28 2013 - Ring initialized, ringsize: 1073741824, pktsize: 632 (512)
+Fri Nov 01 11:38:28 2013 - [MSeedScan] logs_current//.DS_Store: Not a valid Mini-SEED record at offset 0, ignoring file
+Fri Nov 01 11:38:42 2013 - Still searching for device...
+Fri Nov 01 11:39:55 2013 - Port successfully closed: 
+mini_logger_writer version: 0.1 (2013.10.29)
+Info: property set: [Logging] port_path_hint = /dev/cu.usbmodem411
+Info: property set: [Logging] log_dir = ./logs_current
+Info: property set: [Logging] logging_enabled = 1
+Info: property set: [Logging] log_buffer_size = 0.500000
+Info: property set: [Station] station_network = UK
+Info: property set: [Station] station_name = TEST
+Info: property set: [Station] channel_prefix = BH
+Info: property set: [Station] component = Z
+Info: property set: [Station] nominal_sample_rate = 80
+Info: property set: [Station] nominal_gain = 4
+Fri Nov 01 17:38:22 2013 - Record buffer: ring size=1125 records
+Fri Nov 01 17:38:22 2013 - Record buffer: starting record index=47
+Fri Nov 01 17:38:22 2013 - Searching for device...
+Fri Nov 01 17:38:28 2013 - Port successfully closed: 
+Mon Nov 04 17:35:59 2013 - mini_logger_writer version: 0.1 (2013.11.04)
+Info: property set: [Logging] port_path_hint = /dev/cu.usbmodem411
+Info: property set: [Logging] mswrite_dir = ./data_current
+Info: property set: [Logging] writing_enabled = 1
+Info: property set: [Logging] mswrite_buffer_size = 0.083333
+Info: property set: [Station] station_network = UK
+Info: property set: [Station] station_name = TEST
+Info: property set: [Station] channel_prefix = BH
+Info: property set: [Station] component = Z
+Info: property set: [Station] nominal_sample_rate = 80
+Info: property set: [Station] nominal_gain = 1
+Mon Nov 04 17:35:59 2013 - Record buffer: size=187 records, duration=0.083333 hours
+Mon Nov 04 17:35:59 2013 - Searching for device...
+Mon Nov 04 17:36:59 2013 - Still searching for device...
+mini_logger_writer: ERROR: Still searching for device...
+Mon Nov 04 17:36:59 2013 -    Try reconnecting (unplug and plug in) the USB Seismometer Interface device.
+mini_logger_writer: ERROR:    Try reconnecting (unplug and plug in) the USB Seismometer Interface device.
+Mon Nov 04 17:37:35 2013 - Still searching for device...
+mini_logger_writer: ERROR: Still searching for device...
+Mon Nov 04 17:37:35 2013 -    Try reconnecting (unplug and plug in) the USB Seismometer Interface device.
+mini_logger_writer: ERROR:    Try reconnecting (unplug and plug in) the USB Seismometer Interface device.
+Mon Nov 04 17:38:10 2013 - Still searching for device...
+mini_logger_writer: ERROR: Still searching for device...
+Mon Nov 04 17:38:10 2013 -    Try reconnecting (unplug and plug in) the USB Seismometer Interface device.
+mini_logger_writer: ERROR:    Try reconnecting (unplug and plug in) the USB Seismometer Interface device.
+Mon Nov 04 17:38:29 2013 - Port successfully closed: 
+Mon Nov 04 17:38:29 2013 - State saved to: mini_logger_writer.state
+Mon Nov 04 17:39:07 2013 - mini_logger_writer version: 0.1 (2013.11.04)
+Info: property set: [Logging] port_path_hint = /dev/cu.usbmodem411
+Info: property set: [Logging] mswrite_dir = ./data_current
+Info: property set: [Logging] writing_enabled = 1
+Info: property set: [Logging] mswrite_buffer_size = 0.083333
+Info: property set: [Station] station_network = UK
+Info: property set: [Station] station_name = TEST
+Info: property set: [Station] channel_prefix = BH
+Info: property set: [Station] component = Z
+Info: property set: [Station] nominal_sample_rate = 80
+Info: property set: [Station] nominal_gain = 1
+Mon Nov 04 17:39:07 2013 - Record buffer: size=187 records, duration=0.083333 hours
+Mon Nov 04 17:39:07 2013 - Searching for device...
+Mon Nov 04 17:40:07 2013 - Still searching for device...
+mini_logger_writer: ERROR: Still searching for device...
+Mon Nov 04 17:40:07 2013 -    Try reconnecting (unplug and plug in) the USB Seismometer Interface device.
+mini_logger_writer: ERROR:    Try reconnecting (unplug and plug in) the USB Seismometer Interface device.
+Mon Nov 04 17:40:26 2013 - Port successfully closed: 
+Mon Nov 04 17:40:26 2013 - State saved to: mini_logger_writer.state
